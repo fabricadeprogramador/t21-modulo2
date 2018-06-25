@@ -79,11 +79,11 @@ class ListaConvidado {
         let celulaExcluir = linha.insertCell(4);
 
         let imagemExcluir = document.createElement("img");
-        imagemExcluir.setAttribute("onclick", "listaConvidado.remover(" + convidado.id + ")");
+        imagemExcluir.setAttribute("onclick", "listaConvidado.remover(" + convidado._id + ")");
         imagemExcluir.src = "img/delete.svg";
 
         let imagemEditar = document.createElement("img");
-        imagemEditar.setAttribute("onclick", "listaConvidado.editar(" + convidado.id + ")");
+        imagemEditar.setAttribute("onclick", "listaConvidado.editar(" + convidado._id + ")");
         imagemEditar.src = "img/edit.svg";
 
         celulaNome.innerHTML = convidado.nome;
@@ -110,7 +110,6 @@ class ListaConvidado {
 
         if (this.idEdicao == null) {
             this.adicionar();
-            this.cont++;
         } else {
             this.salvarEdicao(this.idEdicao);
         }
