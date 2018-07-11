@@ -1,39 +1,24 @@
 var Convidado = require('./../model/Convidado');
+var ConvidadoController = require('./../controllers/ConvidadoController');
 
 class ConvidadoRoute {
 
     constructor(app) {
 
-        let convidado1 = new Convidado("Jão da Silva", 30, "M");
-        let convidado2 = new Convidado("Maria da Silva", 39, "F");
-        let convidado3 = new Convidado("Marcelo da Conceição", 18, "M");
-
-        var convidados = [
-            convidado1,
-            convidado2,
-            convidado3
-        ];
-
-        app.get('/convidados', function (req, res) {
-            res.json(convidados);
+        app.get('/convidados', (req, res) => {
+            ConvidadoController.buscarTodos(req, res);
         });
 
-        app.post('/convidados', function (req, res) {
-            // res.send("POST para /convidados");
+        app.post('/convidados', (req, res) => {
 
-            //TODO
-            let convidadoAdicionar = req;
-            console.log("REQ = " + req);
-            convidados.push(convidadoAdicionar);
-            res.json(convidadoAdicionar);
         });
 
-        app.put('/convidados', function (req, res) {
-            res.send("PUT para /convidados");
+        app.put('/convidados', (req, res) => {
+
         });
 
-        app.delete('/convidados', function (req, res) {
-            res.send("DELETE para /convidados");
+        app.delete('/convidados/:id', (req, res) => {
+
         });
     }
 
