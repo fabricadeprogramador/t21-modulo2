@@ -1,0 +1,11 @@
+{
+    "development":{
+        "port": 3002,
+        "db": {
+            "nome": "",
+            "url": "",
+            "user": "",
+            "password": ""
+        }
+    }
+}

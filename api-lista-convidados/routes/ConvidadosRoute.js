@@ -1,25 +1,17 @@
-var Convidado = require('./../model/Convidado');
 var ConvidadoController = require('./../controllers/ConvidadoController');
 
 class ConvidadoRoute {
 
     constructor(app) {
 
-        app.get('/convidados', (req, res) => {
-            ConvidadoController.buscarTodos(req, res);
-        });
+        app.route('/convidados')
+        .get(ConvidadoController.buscarTodos)
+        .post(ConvidadoController.adicionar)
+        .put(ConvidadoController.editar)
 
-        app.post('/convidados', (req, res) => {
+        app.route('/convidados/:id')
+        .delete(ConvidadoController.excluir)
 
-        });
-
-        app.put('/convidados', (req, res) => {
-
-        });
-
-        app.delete('/convidados/:id', (req, res) => {
-
-        });
     }
 
 }
